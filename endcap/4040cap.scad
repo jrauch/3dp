@@ -172,11 +172,12 @@ difference() {
 			sphere(round_r,center=true,$fn=smooth);
 		}
 	}
+	translate([0,0,5])
 	difference() {
-		translate([0,0,5]) cube([40.5,40.5,20], center=true);
-		translate([extrusion_hw/2 - slot_width/2,0,5]) color("red") cube([slot_width, slot_width,20], center=true);
-		translate([-(extrusion_hw/2 - slot_width/2),0,5]) cube([slot_width,slot_width,20], center=true);
-		translate([0, extrusion_hw/2 - slot_width/2,5]) cube([slot_width,slot_width,20], center=true);
-		translate([0, -(extrusion_hw/2 - slot_width/2),5]) cube([slot_width,slot_width,20], center=true);
+		cube([40.5,40.5,20], center=true);
+		translate([extrusion_hw/2 - slot_width/2,0,0]) color("red") cube([slot_width, slot_width,20], center=true);
+		translate([-(extrusion_hw/2 - slot_width/2),0,0]) cube([slot_width,slot_width,20], center=true);
+		translate([0, extrusion_hw/2 - slot_width/2,0]) cube([slot_width,slot_width,20], center=true);
+		translate([0, -(extrusion_hw/2 - slot_width/2),0]) cube([slot_width,slot_width,20], center=true);
 	}
 }
