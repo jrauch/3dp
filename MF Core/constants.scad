@@ -24,3 +24,4 @@ gt2pulleydia=10;
 m8washerthickness=1.6;
 yslideWidth=lmu8width+wall;
 yBlockLen=lmu8len*3+wall;
+xRodSpread=yBlockLen-wall*4;
