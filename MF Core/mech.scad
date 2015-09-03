@@ -8,6 +8,6 @@ rotate([90,0,0]) translate([25.5,0,0]) cylinder(d=8, h=200, center=true);
 
 translate([25.5,100,0])  
 difference() {
-cube([60,60,10], center=true);
-rotate([0,0,-45]) nema17Holes(15, true, 10, -45);
+	cube([60,60,10], center=true);
+	rotate([0,0,-45]) nema17Holes(15, true, 10, -45);
 }
