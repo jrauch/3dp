@@ -1,26 +1,8 @@
 // test
 use <nema17.scad>
-
 use <extrusion.scad>
 use <belt.scad>
-$fn=25;
-zRodSpread=80;
-m3borehole=2.7;
-lmu8width=15.2;
-lmu8len=24;
-bearingthickness=8;
-bearingod=10;
-beltthickness=1.4;
-beltwidth=6;
-608width=22;
-608thick=4;
-608hole=8.2;
-m3=3;
-rodHole=8.2;
-extrusion=15;
-extrusionFudge=.2;
-extrusionLength=400;
-wall=5;
+include <constants.scad>
 
 module mountBlock(width=extrusion*3) {
 	difference() {
