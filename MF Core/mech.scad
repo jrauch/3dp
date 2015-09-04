@@ -17,6 +17,7 @@ difference() {
 	}
 	rotate([0,0,-45]) nema17Holes(15, true, 6, -45);
 }
+translate([0, -100, -25])cube([25,45,5], center=true);
 translate([0,-100,0]) rotate([180,0,0])
  doublePulley();
 }
