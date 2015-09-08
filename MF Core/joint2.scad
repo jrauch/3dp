@@ -1,5 +1,6 @@
 use <roundedRect.scad>
 use <constants.scad>
+module joint2() {
 difference() {
 	union() {
 		difference() {
@@ -46,3 +47,6 @@ difference() {
 	translate([0, 30, -15]) rotate([90,0,90]) cylinder(d=3, h=200, center=true);
 
 }
+}
+
+joint2();

@@ -25,3 +25,7 @@ m8washerthickness=1.6;
 yslideWidth=lmu8width+wall;
 yBlockLen=lmu8len*3+wall;
 xRodSpread=yBlockLen-wall*4;
+xCarriageWidth=xRodSpread+wall+lmu8width+2*wall;
+xCarriageLength=lmu8len*2.2;
+hotendMount=16;
+hotendMountHeight=3.7;

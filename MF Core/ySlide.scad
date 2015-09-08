@@ -5,14 +5,23 @@ module ySlide() {
 		translate([0,-5,0]) cube([yBlockLen, yslideWidth+10, yslideWidth], center=true);
 		rotate([0,90,0]) cylinder(d=lmu8width, h=yBlockLen+.1, center=true, $fn=40);
 		translate([-(608width/2+beltthickness/2),0,yslideWidth/2-wall/4]) cylinder(d=m3, h=wall, center=true);
-	#	translate([-(608width/2+beltthickness/2),0 ,(yslideWidth/2-wall/4)-wall/2]) cylinder(d=m3*2, h=wall/2, center=true);
-
-	#	translate([(608width/2+beltthickness/2),-gt2pulleydia/2+beltthickness/2,-(yslideWidth/2-wall/4)]) cylinder(d=m3, h=wall, center=true);
-	#	translate([(608width/2+beltthickness/2),-gt2pulleydia/2+beltthickness/2,-(yslideWidth/2-wall/4)+wall]) cylinder(d=m3*2, h=wall, center=true);
+		translate([-(608width/2+beltthickness/2),0 ,(yslideWidth/2-wall/4)-wall/2]) cylinder(d=m3*2, h=wall/2, center=true);
+diff=(608width/2-gt2pulleydia/2);
+echo(diff);
+		#translate([(608width/2+beltthickness/2),-(gt2pulleydia/2+beltthickness/2+diff),0]) cylinder(d=m3, h=yslideWidth+10, center=true);
+		//translate([(608width/2+beltthickness/2),-(gt2pulleydia/2+beltthickness/2),-(yslideWidth/2-wall/4)+wall]) cylinder(d=m3*2, h=wall, center=true);
 
 		#translate([xRodSpread/2,-10-yslideWidth/2,0]) rotate([90,0,0]) cylinder(d=rodHole, h=20, center=true);
-		#translate([-(xRodSpread/2),-10-yslideWidth/2,0]) rotate([90,0,0]) cylinder(d=rodHole, h=20, center=true);
+		translate([-(xRodSpread/2),-10-yslideWidth/2,0]) rotate([90,0,0]) cylinder(d=rodHole, h=20, center=true);
 
+	}
+	difference() {
+	hull() {
+	translate([-(xRodSpread/2)-9.5,-10-yslideWidth/2 +5,-yslideWidth/2]) cube([1,10,.1], center=true);
+	translate([-(xRodSpread/2),-10-yslideWidth/2 +5,-yslideWidth/2]) cube([3,10,10], center=true);
+	translate([-(xRodSpread/2)+9.5,-10-yslideWidth/2 +5,-yslideWidth/2]) cube([1,10,.1], center=true);
+	}
+	translate([-(xRodSpread/2),-10-yslideWidth/2 +5,-yslideWidth/2+-10/4]) rotate([90,0,0]) cylinder(d=3, h=20, center=true); 
 	}
 }
 
