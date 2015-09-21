@@ -1,4 +1,3 @@
-
 include <constants.scad>
 
 echo(xCarriageWidth);
