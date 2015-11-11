@@ -30,3 +30,12 @@ xCarriageWidth=xRodSpread+wall+lmu8width+2*wall;
 xCarriageLength=lmu8len*2.2;
 hotendMount=16.3;
 hotendMountHeight=3.7;
+m3bolthead=5.7;
+m3boltheight=3;
+armwidth=lmu8width+wall;
+mk2holes=209;
+e3dheight=50; // roughly - not that important
+
+module nuttrap(d=m3bolthead, h=2.4) {
+	cylinder(d=d / cos(180 / 6) + 0.05, h=h, $fn=6, center=true);
+}

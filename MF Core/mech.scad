@@ -11,11 +11,11 @@ translate([5,100,0]) rotate([180,0,0]) motorMount(noMount=true);
 
 //translate([-5,100,0]) doublePulley();
 
-color ("silver") rotate([90,0,0]) translate([25.5,0,0]) cylinder(d=8, h=200, center=true);
+color ("silver") rotate([90,0,0]) translate([25.5,0,10]) cylinder(d=8, h=220, center=true);
 rotate([0, 0, 0]) translate([5,-110.5,0]) motorMount(discs=false);
 
 /*
-translate([25.5,-92.5,25]) 
+translate([25.5,-92.5,25])
 difference() {
 	union() {
 	cube([60,60,5], center=true);
@@ -34,8 +34,8 @@ translate([0, 0, 0]) xCarriage();
 translate([-350/2,0,0]) rail();
 translate([ 350/2,0,0]) rotate([0,180,0]) rail();
 
-color ("silver") rotate([0,90,0]) translate([0,-xRodSpread/2,0]) cylinder(d=8, h=270, center=true);
-color ("silver") rotate([0,90,0]) translate([0,xRodSpread/2,0]) cylinder(d=8, h=270, center=true);
+color ("silver") rotate([0,90,0]) translate([0,-xRodSpread/2,0]) cylinder(d=8, h=290, center=true);
+color ("silver") rotate([0,90,0]) translate([0,xRodSpread/2,0]) cylinder(d=8, h=290, center=true);
 
 rotate([0,0,-90]) translate([-83,0,0]) zTop();
 //translate([0,-zRodSpread/2,-45/2+5 + 300])rodHolder();

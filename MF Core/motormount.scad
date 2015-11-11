@@ -10,7 +10,7 @@ module rail() {
 
 	//rotate([90,0,0]) translate([25.5,0,0]) cylinder(d=8, h=200, center=true);
 	/*
-	translate([25.5,0,25]) 
+	translate([25.5,0,25])
 	difference() {
 	union() {
 	cube([60,60,5], center=true);
@@ -26,14 +26,15 @@ module rail() {
 
 //rail();
 module motorMount(discs=true, noMount=false) {
+	difference() {
+	union() {
 	joint2();
 	translate([20.6,20.6,0])
 	difference() {
 		if(noMount == false) {
 			difference() {
-				translate([0,-5,0]) 
+				translate([0,-5,0])
 				pulleyPlate();
-
 				translate([0,12,0]) cube([36.5,12.5,25], center=true);
 				translate([0,0,10]) cube([36.5,36.2,7.5], center=true);
 			}
@@ -42,25 +43,25 @@ module motorMount(discs=true, noMount=false) {
 
 
 			translate([pulleyWidth/2-.6,-20.5,0]) cube([1.2,85,35], center=true);
-			#translate([pulleyWidth/2-.6,9,9.5/2]) rotate([0,90,0]) cylinder(d=1.9, h=20, center=true);
-			#translate([pulleyWidth/2-.6,9,-9.5/2]) rotate([0,90,0]) cylinder(d=1.9, h=20, center=true);
+			translate([pulleyWidth/2-.6,9,9.5/2]) rotate([0,90,0]) cylinder(d=1.9, h=20, center=true);
+			translate([pulleyWidth/2-.6,9,-9.5/2]) rotate([0,90,0]) cylinder(d=1.9, h=20, center=true);
 
 		}
-		translate([20.6,17,25]){ 
+		translate([20.6,17,27]){
 		if(noMount == false){
 				difference() {
-					translate([1.5,5.5,0]) cube([49.2,50,5], center=true);
+			#		translate([1.5,5.5,0]) cube([49.2,50,9], center=true);
 					cylinder(d=3, h=100, center=true);
 					rotate([0,0,-45]) nema17Holes(15, true, 6, -45);
 				}
 			}
-		
-		
+
+
 			if(discs == true)
 			if(noMount == false) {
-				translate([27.5,30.5,2.2]) cylinder(d=30, h=.6, center=true);
-				translate([-18.5,30.5,2.2]) cylinder(d=30, h=.6, center=true);
-				translate([27.5,-20.5,2.2]) cylinder(d=30, h=.6, center=true);
+				translate([27.5,30.5,4.2]) cylinder(d=30, h=.6, center=true);
+				translate([-18.5,30.5,4.2]) cylinder(d=30, h=.6, center=true);
+				translate([27.5,-20.5,4.2]) cylinder(d=30, h=.6, center=true);
 			} else {
 			/*	translate([27.5,30.5,2.2]) cylinder(d=30, h=.6, center=true);
 				translate([-18.5,30.5,2.2]) cylinder(d=30, h=.6, center=true);
@@ -68,8 +69,11 @@ module motorMount(discs=true, noMount=false) {
 			}
 
 		}
-	
 }
-	motorMount(noMount=true);
-	//translate([0,100,0]) 
+translate([20.6,-5,0]) rotate([90,0,0]) cylinder(d=rodHole, h=100, center=true);
+
+}
+}
+	motorMount(noMount=false);
+	//translate([0,100,0])
 	//motorMount(discs=true);
