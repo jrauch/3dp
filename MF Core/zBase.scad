@@ -3,6 +3,9 @@ use <extrusion.scad>
 use <belt.scad>
 include <constants.scad>
 
+target=0;
+MODULE=target;
+
 module mountBlock(width=extrusion*3) {
 	difference() {
 		cube([extrusion + wall*2,width,extrusion*3], center=true);
@@ -56,7 +59,7 @@ module topBlock() {
 
 }
 
-module xPiece(front=false, width) {
+module zMountPiece(front=false, width) {
 
 	difference() {
 		union(){
@@ -127,7 +130,7 @@ module zCarrier() {
 
 			translate([0,-zRodSpread/2, -lmu8len/2]) lmu8Block();
 			translate([0,-zRodSpread/2, lmu8len/2]) lmu8Block();
-			xPiece(width=zRodSpread/2 + lmu8width+wall);
+			zMountPiece(width=zRodSpread/2 + lmu8width+wall);
 			difference() {
 				hull() {
 					translate([0,-(zRodSpread/2 + lmu8width+wall-.1)+(extrusion+wall)/2,lmu8len-.1/2]) cube([extrusion+wall+.2, .1, .1], center=true);
@@ -212,4 +215,23 @@ translate([0,zRodSpread/2,-45/2+5 + 300])rodHolder();
 translate([0, 0, 255]) zCarrier();*/
 /*translate([0, 0, 255]) xPiece(front=true, width=zRodSpread/2 + lmu8width+wall);*/
 //plateTie();
-mountPlate();
+if(MODULE=="mountPlate")
+	mountPlate();
+else
+if(MODULE=="rodHolder")
+	rodHolder();
+else
+if(MODULE == "zBase")
+	zBase();
+else
+if(MODULE == "zTop")
+	zTop();
+else
+if(MODULE == "zCarrier")
+	zCarrier();
+else
+if(MODULE=="zMountPiece")
+	zMountPiece();
+else
+if(MODULE == "plateTie")
+	plateTie();

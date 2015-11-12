@@ -36,7 +36,7 @@ module xCarriage() {
 		//rotate([0,0,90]) translate([-14,0,0]) cylinder(d=12.2, h=40, center=true);
 		//rotate([0,0,-90]) translate([-14,0,0]) cylinder(d=12.2, h=40, center=true);
 
-		rotate([180,0,0]) translate([0,0,(lmu8width+wall)/2]) hotendMount();
+	#	rotate([180,0,0]) translate([0,0,(lmu8width+wall)/2]) hotendMount();
 		translate([0,0,0])
 		for(i=[0:360/6:360]) {
 			rotate([0,0,i]) translate([12,0,(lmu8width+wall)/2]) nuttrap(h=9);
@@ -61,4 +61,13 @@ module xCarriage() {
 	}
 }
 
+module hotendRetainer() {
+	difference() {
+		cylinder(r=hotendMount, h=hotendGrooveHeight, center=true, $fn=40);
+		#translate([0,0,hotendGrooveHeight+10]) hotendMount();
+		cylinder(d=hotendGrooveDiameter, h=hotendGrooveHeight+1, center=true, $fn=40);
+		rotate([0,0,30]) translate([0, 10, 0]) cube([hotendGrooveDiameter, 20, hotendGrooveHeight+10], center=true);
+	}
+}
 xCarriage();
+rotate([0,0,60]) translate([0,0,-30]) hotendRetainer();
